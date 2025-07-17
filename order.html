@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказать бумагу | Мир Оригами</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="site-container">
+        <header class="site-header">
+            <h1>Мир Оригами</h1>
+        </header>
+        
+        <div class="site-body">
+            <nav class="site-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="history.html">История оригами</a></li>
+                    <li><a href="schemes.html">Схемы оригами</a></li>
+                    <li><a href="order.html">Заказать бумагу</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <main class="site-content">
+                <h2>Заказать бумагу</h2>
+                
+                <!-- Блок 1 -->
+                <div class="image-text-container">
+                    <div class="image-text-block">
+                        <img src="images/imag_1.webp" alt="Обычная бумага" class="paper-image">
+                        <div class="paper-description">
+                            <h3>Цветная одностороння бумага для оригами</h3>
+                            <p><strong>Характеристики:</strong> 80 г/м², 10 цветов</p>
+                            <p><strong>Размер листа:</strong> 15×15 см</p>
+                            <p><strong>Цена:</strong> <span class="price">220 руб.</span> за 10 листов</p>
+                            <p>Идеально подходит для начинающих. Достаточно плотная, чтобы держать форму, но легко складывается.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок 2 -->
+                <div class="image-text-container">
+                    <div class="image-text-block">
+                        <img src="images/imag_2.jpg" alt="Цветная бумага" class="paper-image">
+                        <div class="paper-description">
+                            <h3>Ками цветная двухсторонняя бумага для оригами</h3>
+                            <p><strong>Характеристики:</strong> 80 г/м², 10 цветов</p>
+                            <p><strong>Размер листа:</strong> 15×15 см</p>
+                            <p><strong>Цена:</strong> <span class="price">250 руб.</span> за 10 листов</p>
+                            <p>Яркие насыщенные цвета, которые прекрасно держаться на бумаге</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок 3 -->
+                <div class="image-text-container">
+                    <div class="image-text-block">
+                        <img src="images/imag_3.webp" alt="Металлизированная бумага" class="paper-image">
+                        <div class="paper-description">
+                            <h3>Васи бумага для оригами с орнаментом</h3>
+                            <p><strong>Характеристики:</strong> 100 г/м², 10 различных орнаментов</p>
+                            <p><strong>Размер листа:</strong> 15×15 см</p>
+                            <p><strong>Цена:</strong> <span class="price">350 руб.</span> за 5 листов</p>
+                            <p>Плотная, глянцевая бумага которая благодаря яркому и разнообразному орнаменту позволит создать вам неповторимые шедевры.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок 4 -->
+                <div class="image-text-container">
+                    <div class="image-text-block">
+                        <img src="images/imag_4.webp" alt="Двухсторонняя бумага" class="paper-image">
+                        <div class="paper-description">
+                            <h3>Тишью тонкая бумага для оригами</h3>
+                            <p><strong>Характеристики:</strong> 50 г/м², 10 цветов</p>
+                            <p><strong>Размер листа:</strong> 30×30 см</p>
+                            <p><strong>Цена:</strong> <span class="price">350 руб.</span> за 10 листов</p>
+                            <p>Очень тонкая бумага, благодаря этому ее можно сложить множество раз, подходит для очень сложных и объемных схем</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="order-form">
+                    <!-- Форма остается без изменений -->
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    
+                    <label>Тип бумаги:</label>
+                    <div class="paper-types">
+                        <div class="paper-option">
+                            <input type="radio" id="ordinary" name="paper-type" value="ordinary" checked>
+                            <label for="ordinary">Цветная односторонняя </label>
+                        </div>
+                        <div class="paper-option">
+                            <input type="radio" id="colored" name="paper-type" value="colored">
+                            <label for="colored">Цветная двухсторонняя - ками</label>
+                        </div>
+                        <div class="paper-option">
+                            <input type="radio" id="metallic" name="paper-type" value="metallic">
+                            <label for="metallic">С орнаментом - васи </label>
+                        </div>
+                        <div class="paper-option">
+                            <input type="radio" id="double-sided" name="paper-type" value="double-sided">
+                            <label for="double-sided">Тонкая - тишью</label>
+                        </div>
+                    </div>
+                    
+                    <label for="quantity">Количество упаковок:</label>
+                    <select id="quantity" name="quantity">
+                        <option value="1">1 упаковка</option>
+                        <option value="5">5 упаковок</option>
+                        <option value="10">10 упаковок</option>
+                    </select>
+                    
+                    <button type="submit" class="submit-btn">Отправить заказ</button>
+                </form>
+            </main>
+        </div>
+    </div>
+	
+		<!-- Бургер-иконка -->
+	<div class="burger-menu" onclick="toggleMenu()">☰</div>
+
+	<script>
+		function toggleMenu() {
+			document.querySelector('.site-menu').classList.toggle('mobile-show');
+		}
+	</script>
+	
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(() => console.log('Service Worker зарегистрирован!'))
+      .catch(err => console.log('Ошибка:', err));
+  }
+</script>
+	
+</body>
+</html>
