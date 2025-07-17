@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная | Мир Оригами</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="manifest" href="/manifest.json">
+    <style>
+        /* Стили для модального окна */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .modal-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="site-container">
+        <header class="site-header">
+            <h1>Мир Оригами</h1>
+        </header>
+        
+        <div class="site-body">
+            <nav class="site-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="history.html">История оригами</a></li>
+                    <li><a href="schemes.html">Схемы оригами</a></li>
+                    <li><a href="order.html">Заказать бумагу</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <main class="site-content">
+                <!-- Приветственный блок -->
+                <section class="welcome-section">
+                    <h2>Добро пожаловать в мир оригами!</h2>
+                    <div class="welcome-text">
+                        <p>Наш сайт посвящён древнему искусству складывания бумаги, которое превращает обычный лист в удивительные фигуры. Здесь вы найдёте всё для погружения в это медитативное творчество.</p>
+                        
+                        <p>В разделе <a href="history.html">"История"</a> мы расскажем о многовековой традиции оригами, от ритуальных японских поделок до современных математических моделей. Вы узнаете, как простое складывание бумаги стало мировым культурным явлением.</p>
+                        
+                        <p>Раздел <a href="schemes.html">"Схемы"</a> содержит сотни пошаговых инструкций - от классического журавлика до сложных модульных конструкций. Да даже если вы никогда не пробовали оригами, наши схемы помогут сделать первые шаги.</p>
+                    </div>
+                </section>
+                
+                <!-- Галерея примеров -->
+                <section class="examples-gallery">
+                    <h2>Примеры работ</h2>
+                    <div class="gallery-grid">
+                        <div class="example-card">
+                            <img src="images/easy.png" alt="Простая фигура" onclick="openModal(this)">
+                            <div class="example-caption">
+                                <h3>Для начинающих</h3>
+                                <p>Простые модели, которые сможет сложить каждый с первого раза. Идеальны для первого знакомства с оригами.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="example-card">
+                            <img src="images/medium.jpg" alt="Фигура средней сложности" onclick="openModal(this)">
+                            <div class="example-caption">
+                                <h3>Для увлечённых</h3>
+                                <p>Потребуют внимания и аккуратности. Освоив эти модели, вы поймёте основные принципы оригами.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="example-card">
+                            <img src="images/hurd.jpg" alt="Сложная фигура" onclick="openModal(this)">
+                            <div class="example-caption">
+                                <h3>Для мастеров</h3>
+                                <p>Настоящие произведения искусства. Такие работы требуют опыта, терпения и качественных материалов.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Призыв к действию -->
+                <section class="cta-section">
+                    <h2>С чего начать?</h2>
+                    <p>Выберите бумагу в нашем <a href="order.html">магазине</a>, найдите подходящую схему и погрузитесь в медитативный процесс создания!</p>
+                    <p>Оригами развивает мелкую моторику, концентрацию внимания и пространственное мышление - идеальное занятие и для детей, и для взрослых.</p>
+                </section>
+            </main>
+        </div>
+    </div>
+
+		<!-- Бургер-иконка -->
+	<div class="burger-menu" onclick="toggleMenu()">☰</div>
+
+	<script>
+		function toggleMenu() {
+			document.querySelector('.site-menu').classList.toggle('mobile-show');
+		}
+	</script>
+	
+	<!-- Модальное окно для просмотра изображений -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="expandedImg" class="modal-img">
+        </div>
+    </div>
+
+    <script>
+        // Функция для открытия модального окна
+        function openModal(img) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("expandedImg");
+            
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            
+            // Запрет прокрутки страницы при открытом модальном окне
+            document.body.style.overflow = "hidden";
+        }
+        
+        // Функция для закрытия модального окна
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+            document.body.style.overflow = "auto"; // Восстановление прокрутки
+        }
+        
+        // Закрытие модального окна при клике вне изображения
+        window.onclick = function(event) {
+            const modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        
+        // Закрытие модального окна при нажатии Esc
+        document.onkeydown = function(evt) {
+            evt = evt || window.event;
+            if (evt.keyCode == 27) {
+                closeModal();
+            }
+        };
+    </script>
+	
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(() => console.log('Service Worker зарегистрирован!'))
+      .catch(err => console.log('Ошибка:', err));
+  }
+</script>
+	
+</body>
+</html>
