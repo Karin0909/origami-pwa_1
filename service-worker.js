@@ -9,9 +9,10 @@ const urlsToCache = [
   '/style.css',
   '/images/icon-192.png',
   '/images/icon-512.png',
-  // Добавь другие важные файлы (CSS, JS, изображения)
+  '/images/easy.png',
+  '/images/medium.jpg',
+  '/images/hurd.jpg',
 ];
-
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
